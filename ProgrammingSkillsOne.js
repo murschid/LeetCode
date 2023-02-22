@@ -216,3 +216,4 @@ class ProgrammingSkillsOne {
 }
 
 const programmingSkillsOne = new ProgrammingSkillsOne();
+export default programmingSkillsOne;

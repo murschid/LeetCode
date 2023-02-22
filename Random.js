@@ -24,8 +24,9 @@ class Random {
      */
     mostWater(height) {
         let result = 0;
-        for(i = 0; i < height.length; i++) {
-            for(j = i + 1; j < height.length; j++) {
+		let length = height.length;
+        for(i = 0; i < length; i++) {
+            for(j = i + 1; j < length; j++) {
                 let tempRes = Math.min(height[i], height[j])
                 tempRes = tempRes * (j - i);
                 result = Math.max(result, tempRes);

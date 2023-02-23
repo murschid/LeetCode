@@ -18,6 +18,24 @@ class Random {
 	}
 
 	/**
+	 * 1. Two Sum
+	 * @param {number[]} nums
+	 * @param {number} target
+	 * @return {number[]}
+	 */
+	twoSumOptimized(nums, target) {
+		for (let i = 0; i < nums.length; i++) {
+			let remain = target - nums[i];
+			for (let j = i + 1; j < nums.length; j++) {
+				if (remain === nums[j]) {
+					return [i, j];
+				}
+			}
+		}
+		return -1;
+	}
+
+	/**
 	 * 11. Container With Most Water
 	 * @param {number[]} height
 	 * @return {number}
@@ -54,23 +72,6 @@ class Random {
 		return totalWater;
 	}
 
-	/**
-	 * 1. Two Sum
-	 * @param {number[]} nums
-	 * @param {number} target
-	 * @return {number[]}
-	 */
-	twoSumOptimized(nums, target) {
-		for (let i = 0; i < nums.length; i++) {
-			let remain = target - nums[i];
-			for (let j = i + 1; j < nums.length; j++) {
-				if (remain === nums[j]) {
-					return [i, j];
-				}
-			}
-		}
-		return -1;
-	}
 }
 
 const random = new Random();

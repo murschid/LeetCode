@@ -72,6 +72,20 @@ class Random {
 		return totalWater;
 	}
 
+	/**
+	 * @param {string} s
+	 * @param {string} t
+	 * @return {character}
+	 */
+	findTheDifference = function(s, t) {
+		let newS = s.split("");
+		for (let i = 0; i < t.length; i++) {
+			if (!newS.includes(t[i])) {
+				return t[i];
+			}
+		}
+	};
+
 }
 
 const random = new Random();

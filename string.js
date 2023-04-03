@@ -319,3 +319,55 @@ const countSegments = function(s) {
     return sum;
 };
 // console.log(countSegments("Hello, my name is John"));
+
+/** 2315. Count Asterisks
+ * @param {string} s
+ * @return {number}
+ */
+const countAsterisks = function(s) {
+    let res = 0;
+    const input = s.split("|");
+    input.forEach((value, index) => {
+        if(isEven(index)) {
+            value.split("").forEach((val) => {
+                if(val === "*") {
+                    res += 1;
+                }
+            });
+        }
+    });
+    function isEven(n) {
+        return n % 2 === 0;
+    }
+    return res;
+};
+// console.log(countAsterisks("l|*e*et|c**o|*de|"));
+
+/** 557. Reverse Words in a String III
+ * @param {string} s
+ * @return {string}
+ */
+const reverseWords = function(s) {
+    const input = s.split(" ");
+    let res = "";
+    input.forEach((value) => {
+        res += value.split("").reverse().join("") + " ";
+    });
+    return res.trim();
+};
+// console.log(reverseWords("Let's take LeetCode contest"));
+
+/** 2418. Sort the People
+ * @param {string[]} names
+ * @param {number[]} heights
+ * @return {string[]}
+ */
+const sortPeople = function(names, heights) {
+    let map = new Map();
+    names.forEach((value, index) => {
+        map.set(heights[index], value);
+    });
+    let newMap = new Map([...map.entries()].sort((a, b) => b[0] - a[0]));
+    return [...newMap.values()];
+};
+// console.log(sortPeople(["Mary","John","Emma"], [180,165,170]));
